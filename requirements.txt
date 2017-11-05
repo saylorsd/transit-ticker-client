@@ -1,0 +1,6 @@
+RPi.GPIO==0.6.3
+argparse==1.2.1
+redis==2.10.5
+requests==2.4.3
+spidev==3.2
+
