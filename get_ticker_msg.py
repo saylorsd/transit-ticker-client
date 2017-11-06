@@ -1,9 +1,18 @@
 #!/usr/bin/python
+import os
 import time
 import requests
 import redis
 
-TICKER_ID  = 'TEST'
+DIR = os.path.dirname(os.path.realpath(__file__))
+
+try:
+    with open(DIR+'ticker_id') as f:
+        TICKER_ID = f.readline().rstrip()
+except:
+    print('Error reading ticker id')
+    TICKER_ID = 'TEST'
+
 
 url = "http://tools.stevesaylor.io/bus-ticker/message/" + TICKER_ID
 

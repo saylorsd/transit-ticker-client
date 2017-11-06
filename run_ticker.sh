@@ -1,13 +1,23 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# This script checks to see if the led driver and the message collector are working.
+# If not, it will attemp to rerun them.
 
+# CD to directory containg this script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR
 
-echo 'Starting Ticker'
-python ./led-matrix-ticker/demo.py -r &
 
+# Run led driver if necessary
+if pgrep -x "led-matrix-ticker/demo.py" > /dev/null
+then
+    echo 'Starting Ticker'
+    ./led-matrix-ticker/demo.py -r &
+fi
 
-echo 'Starting message client'
-python ./get_ticker_msg.py &
-
+# Run ticker client if necessary
+if pgrep -x "transit-ticker-client/get_ticker_msg.py" > /dev/null
+then
+    echo 'Starting message client'
+    ./transit-ticker-client/get_ticker_msg.py &
+fi
