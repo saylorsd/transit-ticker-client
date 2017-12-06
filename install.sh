@@ -6,7 +6,7 @@
 # TODO: have user enter host establishment's wifi credentials
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
+pwd
 
 # install python requirements
 echo "Installing python requirements..."
@@ -16,7 +16,7 @@ pip install -r $DIR/requirements.txt
 # get ticker id
 echo "Enter Ticker ID:"
 read ticker_id
-echo ticker_id > $DIR/ticker_id
+echo $ticker_id > $DIR/ticker_id
 
 # Set up cronjob to constantly check that it's running
 echo "Setting up monitor script..."
