@@ -11,7 +11,7 @@ try:
         TICKER_ID = f.readline().rstrip()
 except:
     print('Error reading ticker id')
-    TICKER_ID = 'TEST'
+    TICKER_ID = 'ERROR'
 
 
 url = "http://tools.stevesaylor.io/bus-ticker/message/" + TICKER_ID
