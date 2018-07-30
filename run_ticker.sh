@@ -12,7 +12,7 @@ pwd
 if ! pgrep -f "run_led_ticker.py" > /dev/null
 then
     echo 'Starting Ticker'
-    python $DIR/led-matrix-ticker/run_led_ticker.py -r -s 10 -w 8 &
+    python $DIR/led-matrix-ticker/run_led_ticker.py -r -s 7 -w 8 &
 else
     echo 'Ticker already running'
 fi

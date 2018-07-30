@@ -8,6 +8,8 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 pwd
 
+
+sudo apt install -y python-pip redis-server
 # install python requirements
 echo "Installing python requirements..."
 pip install -r $DIR/requirements.txt
